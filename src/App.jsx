@@ -1,15 +1,15 @@
-import { useState } from "react";
 import "./App.css";
-import Header from "./components/Header";
-import Nav from "./components/Nav";
 import Contact from "./components/ContactPage";
+import { Route, Routes } from "react-router";
+import Home from "./components/Home";
 
 function App() {
   return (
     <>
-      <Header />
-      <Nav />
-      <Contact />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="#contact" element={<Contact />} />
+      </Routes>
     </>
   );
 }
