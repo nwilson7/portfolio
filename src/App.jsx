@@ -1,16 +1,44 @@
-import "./App.css";
+import Nav from "./components/Nav";
 import Contact from "./components/ContactPage";
-import { Route, Routes } from "react-router";
 import Home from "./components/Home";
 
 function App() {
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </>
+    <div className="relative">
+      {/* Navbar */}
+      <Nav />
+
+      {/* Page Sections */}
+      <section
+        id="about"
+        className="min-h-screen flex items-center justify-center"
+      >
+        <Home />
+      </section>
+
+      <section
+        id="skills"
+        className="min-h-screen flex items-center justify-center bg-gray-100"
+      >
+        {/* Replace with your Skills Component */}
+        <h1 className="text-3xl">Skills Section</h1>
+      </section>
+
+      <section
+        id="projects"
+        className="min-h-screen flex items-center justify-center"
+      >
+        {/* Replace with your Projects Component */}
+        <h1 className="text-3xl">Projects Section</h1>
+      </section>
+
+      <section
+        id="contact"
+        className="min-h-screen flex items-center justify-center bg-gray-100"
+      >
+        <Contact />
+      </section>
+    </div>
   );
 }
 
