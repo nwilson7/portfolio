@@ -1,4 +1,32 @@
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
 function Contact() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "portfolioSite_contact",
+        "contactme_template",
+        form.current,
+        publicKey
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("Message sent successfully");
+          form.current.reset();
+        },
+        (error) => {
+          console.log(error.text);
+          alert("An error has occurred, please try again.");
+        }
+      );
+  };
   return (
     <div className="isolate rounded-xl my-10 bg-white px-6 py-12 sm:py-16 lg:px-8">
       <div className="mx-auto max-w-2xl text-center">
@@ -6,7 +34,7 @@ function Contact() {
           Contact Me
         </h2>
       </div>
-      <form action="#" method="POST" className="mx-auto my-8 max-w-xl">
+      <form ref={form} onSubmit={sendEmail} className="mx-auto my-8 max-w-xl">
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
             <label
@@ -21,6 +49,7 @@ function Contact() {
                 name="first-name"
                 type="text"
                 autoComplete="given-name"
+                required
                 className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
               />
             </div>
@@ -38,6 +67,7 @@ function Contact() {
                 name="last-name"
                 type="text"
                 autoComplete="family-name"
+                required
                 className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
               />
             </div>
@@ -55,6 +85,7 @@ function Contact() {
                 name="email"
                 type="email"
                 autoComplete="email"
+                required
                 className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
               />
             </div>
@@ -71,6 +102,7 @@ function Contact() {
                 id="message"
                 name="message"
                 rows={4}
+                required
                 className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
                 defaultValue={""}
               />
