@@ -9,6 +9,7 @@ import mysqlIcon from "../assets/skills/mysqlIcon.svg";
 import nodeIcon from "../assets/skills/nodeIcon.svg";
 import psqlIcon from "../assets/skills/psqlIcon.svg";
 import pythonIcon from "../assets/skills/pythonIcon.svg";
+import learningIcon from "../assets/skills/learningIcon.svg";
 
 function Skills() {
   const skills = [
@@ -23,6 +24,7 @@ function Skills() {
     { name: "Bash", icon: bashIcon },
     { name: "PostgresSQL", icon: psqlIcon },
     { name: "MySQL", icon: mysqlIcon },
+    { name: "More To Come...", icon: learningIcon },
   ];
 
   return (
