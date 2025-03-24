@@ -6,9 +6,7 @@ import Skills from "./components/SkillsPage";
 function App() {
   return (
     <div className="relative">
-      {/* Navbar */}
       <Nav />
-
       {/* Page Sections */}
       <section
         id="about"

@@ -35,7 +35,7 @@ function Skills() {
         {skills.map((skill, index) => (
           <div
             key={index}
-            className="flex flex-col items-center p-4 rounded-xl shadow-md hover:scale-105 transition-transform"
+            className="flex flex-col items-center p-4 rounded-xl shadow-md hover:scale-105 transition-transform bg-gray-50"
           >
             <img src={skill.icon} alt={skill.name} className="w-16 h-16 mb-4" />
             <p className="text-lg font-medium">{skill.name}</p>
