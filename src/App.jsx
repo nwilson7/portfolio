@@ -1,18 +1,17 @@
 import Nav from "./components/Nav";
 import Contact from "./components/ContactPage";
-import Home from "./components/Home";
+import About from "./components/About";
 import Skills from "./components/SkillsPage";
 
 function App() {
   return (
     <div className="relative">
       <Nav />
-      {/* Page Sections */}
       <section
         id="about"
         className="min-h-screen flex items-center justify-center"
       >
-        <Home />
+        <About />
       </section>
 
       <section
