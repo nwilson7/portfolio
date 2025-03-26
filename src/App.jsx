@@ -2,6 +2,7 @@ import Nav from "./components/Nav";
 import Contact from "./components/ContactPage";
 import About from "./components/About";
 import Skills from "./components/SkillsPage";
+import Projects from "./components/Projects";
 
 function App() {
   return (
@@ -25,8 +26,7 @@ function App() {
         id="projects"
         className="min-h-screen flex items-center justify-center"
       >
-        {/* Replace with your Projects Component */}
-        <h1 className="text-3xl">Projects Section</h1>
+        <Projects />
       </section>
 
       <section
