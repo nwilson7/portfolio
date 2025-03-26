@@ -26,14 +26,19 @@ function Projects() {
         <h2 className="text-4xl font-semibold text-gray-900 mb-8">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projectData.map((project, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-md p-4">
+            <div
+              key={index}
+              className="bg-white rounded-xl shadow-md p-4 flex flex-col h-full"
+            >
               <img
                 src={project.image}
                 alt={project.name}
                 className="w-full h-48 object-cover rounded-md"
               />
               <h3 className="text-xl font-medium mt-4">{project.name}</h3>
-              <p className="text-gray-600 mt-2">{project.description}</p>
+              <p className="text-gray-600 mt-2 flex-grow">
+                {project.description}
+              </p>
               <div className="mt-4 flex justify-between">
                 <a
                   href={project.github}
